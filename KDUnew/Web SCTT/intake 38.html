@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intake 38</title>
+    <style>
+        /* Reset some default styling */
+        body, h1, h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style header */
+        .navbar {
+            background-color: rgba(0, 50, 85, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 60px;
+        }
+
+        .navbar .left img {
+            height: 90px;
+            width: auto;
+        }
+
+        .navbar .right img {
+            height: 90px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .navbar .center {
+            color: rgba(200, 228, 249, 1);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 30px;
+            background-color: rgba(200, 228, 249, 1); 
+            border-radius: 10px;
+        }
+        
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th{
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        } 
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgba(0, 50, 85, 1);
+            color: white;
+        }
+
+        .button {
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .circle-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(0, 150, 255, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+        }
+
+        .circle-button.left {
+            left: 20px;
+        }
+
+        .circle-button.right {
+            right: 20px;
+        }
+
+        /* Style the popup box */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            z-index: 9999;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .popup h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup button {
+            background-color: rgba(0, 50, 85, 1);
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+    <title>Intake 38</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="images/Group 8.png" alt="Logo">
+        </div>
+        <div class="center">
+            Student Details
+        </div>
+        <div class="right">
+            <img src="images/KDUlogoPNG.png" alt="KDU Logo">
+        </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Index No.</th>
+                <th>Name</th>
+                <th>Intake</th>
+                <th></th>
+            </tr>
+            
+                <tr>
+                    <td>D/BSE/21/0029</td>
+                    <td>asd Uththra</td>
+                    <td>38</td>
+                    <td><div class="button" onclick="showPopup()">...</div></td>
+                </tr>
+            
+            <tr>
+                <td>D/BSE/21/0028</td>
+                <td>wed Bandara</td>
+                <td>38</td>
+                <td><div class="button" onclick="showPopup()">...</div></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Popup Box -->
+    <div class="popup" id="popup">
+        
+        <button onclick="editEntry()">Edit</button>
+        <button onclick="deleteEntry()">Delete</button>
+        <button onclick="closePopup()">Back</button>
+    </div>
+
+    <!-- Circle Buttons -->
+    <div class="circle-button left" onclick="location.href='home.html';">
+        <img src="images/Arrow.png" alt="Back" style="width: 30px; height: 30px;">
+    </div>
+
+    <div class="circle-button right" onclick="location.href='addnewstudent.html';">
+        +
+    </div>
+
+    <script>
+        // Function to show the popup
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        // Function to handle edit action
+        function editEntry() {
+            alert("Edit action performed");
+            closePopup();
+        }
+
+        // Function to handle delete action
+        function deleteEntry() {
+            alert("Delete action performed");
+            closePopup();
+        }
+    </script>
+</body>
+</html>

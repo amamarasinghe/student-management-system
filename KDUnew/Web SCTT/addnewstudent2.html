@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addnewstudent2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 50, 85, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 60px;
+        }
+
+        .navbar .left img{
+            height: 90px;
+            width: auto;
+        }
+        .navbar .right img {
+            height: 100px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .navbar .center {
+            color: rgba(200, 228, 249, 1);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+
+        /* Container for the form */
+        .form-container {
+            background-color: rgba(200, 228, 249, 1);
+            padding: 20px;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-top: 50px;
+            
+        }
+
+        /* Style for the buttons container */
+        .buttons-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Adjusted to position the buttons at the bottom right */
+        }
+
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style for table headers */
+        th {
+            background-color: rgba(0, 50, 85, 1);
+            color: white;
+            padding: 8px; 
+        }
+
+        /* Style for table data */
+        td {
+            padding: 8px;
+            padding-bottom: 10px;
+            text-align: center; 
+        }
+
+        /* Style for even rows */
+        tr:nth-child(even) {
+            background-color: rgba(235, 239, 255, 1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for odd rows */
+        tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for tickbox */
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        /* Style for search button */
+        .search-button {
+            background-image: url('images/s2.png');
+            background-size: cover;
+            width: 30px; /* Adjust width as needed */
+            height: 30px; /* Adjust height as needed */
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for search cell */
+        .search-cell {
+            position: relative;
+        }
+
+        /* Style for search button within search cell */
+        .search-cell .search-button {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+        }
+
+        /* Style for search box */
+        .search-box {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 100%;
+            right: 5px;
+            z-index: 1;
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+
+        /* Style for search box input */
+        .search-input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Style for additional buttons */
+        .buttons-container button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: rgba(0, 150, 255, 1);
+            border-radius: 20px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="images/Group 8.png" alt="Logo">
+        </div>
+        <div class="center">
+            Student Details
+        </div>
+        <div class="right">
+            <img src="images/KDUlogoPNG.png" alt="KDU Logo">
+        </div>
+    </div>
+
+    <!-- Container for the form -->
+    <div class="form-container">
+        <table>
+            <thead>
+                <tr style="background-color: rgba(0, 50, 85, 1);">
+                    <th>Module number</th>
+                    <th>Module name</th>
+                    <th>Semester</th>
+                    <th class="search-cell"> <!-- Cell for search button -->
+                        <button class="search-button" onclick="toggleSearchBox()"></button> <!-- Search button with background image -->
+                        <div class="search-box" id="searchBox">
+                            <input type="text" class="search-input" placeholder="Search by module number">
+                            <button onclick="searchModule()">Search</button>
+                            <button onclick="cancelSearch()">Cancel</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SE1023</td>
+                    <td>Software Modeling</td>
+                    <td>5</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>CS1011</td>
+                    <td>Introduction to Computer Science</td>
+                    <td>1</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>MA2050</td>
+                    <td>Calculus II</td>
+                    <td>3</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Buttons container -->
+    <div class="buttons-container">
+        <button onclick="addModule()">Add</button>
+        <button onclick="removeModule()">Remove</button>
+        <button onclick="cancel()">Cancel</button>
+    </div>
+
+    <!-- Back button -->
+    <div class="buttons-container" style="bottom: 20px; left: 20px;">
+        <img src="images/Group 30.png" alt="Back" class="back-button" onclick="location.href='addnewstudent.html';">
+    </div>
+
+    <script>
+        function toggleSearchBox() {
+            var searchBox = document.getElementById('searchBox');
+            searchBox.style.display = searchBox.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function searchModule() {
+            // Implement search functionality here
+            alert('Searching...');
+        }
+
+        function cancelSearch() {
+            var searchBox = document.getElementById('searchBox');
+            searchBox.style.display = 'none';
+        }
+
+        function addModule() {
+            // Implement add module functionality here
+            alert('Adding module...');
+        }
+
+        function removeModule() {
+            // Implement remove module functionality here
+            alert('Removing module...');
+        }
+
+        function cancel() {
+            // Implement cancel functionality here
+            alert('Canceling...');
+        }
+
+        function goBack() {
+            // Implement go back functionality here
+            alert('Going back...');
+        }
+    </script>
+</body>
+</html>

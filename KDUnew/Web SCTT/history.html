@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 50, 85, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 60px;
+        }
+
+        .navbar .left img{
+            height: 90px;
+            width: auto;
+        }
+        .navbar .right img {
+            height: 100px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .navbar .center {
+            color: rgba(200, 228, 249, 1);
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .form-container {
+            background-color: rgba(200, 228, 249, 1);
+            padding: 20px;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-top: 50px;
+            position: relative; /* Position relative for absolute positioning of the back button */
+        }
+
+        /* Dark blue header row */
+        .form-container .row:first-child {
+            background-color: rgba(0, 0, 85, 1); /* Dark blue */
+            color: white;
+        }
+
+        /* Light blue body rows */
+        .form-container .row:not(:first-child) {
+            background-color: rgba(235, 239, 255, 1); /* Light blue */
+        }
+
+        /* Separate rows */
+        .form-container .row + .row {
+            margin-top: 10px;
+        }
+
+        /* Two columns layout */
+        .form-container .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        /* Style for the buttons container */
+        .buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Adjusted to position the buttons at the bottom left */
+        }
+
+        
+
+        /* Style for the back button */
+        .buttons-container .back-button {
+            cursor: pointer;
+            margin-right: 10px; /* Added margin to separate the buttons */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="images/Group 8.png" alt="Logo">
+        </div>
+        <div class="center">
+            History
+        </div>
+        <div class="right">
+            <img src="images/KDUlogoPNG.png" alt="KDU Logo">
+        </div>
+    </div>
+    <div class="form-container">
+        <!-- Dark blue row -->
+        <div class="row">
+            <div class="column">Task</div>
+            <div class="column">Time</div>
+        </div>
+        <!-- Light blue rows -->
+        <div class="row">
+            <div class="column">Add Student</div>
+            <div class="column">12:34 PM</div>
+        </div>
+        <div class="row">
+            <div class="column">Another Task</div>
+            <div class="column">1:30 PM</div>
+        </div>
+        <div class="row">
+            <div class="column">Yet Another Task</div>
+            <div class="column">2:45 PM</div>
+        </div>
+        
+    </div>
+    <!-- Back button -->
+    <div class="buttons-container">
+        <img src="images/Group 30.png" alt="Back" class="back-button" onclick="location.href='home.html';">
+        
+    </div>
+</body>
+</html>

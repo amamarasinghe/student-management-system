@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset some default styling */
+        body, h1, h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style header */
+        #header {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            background-color: rgba(0, 50, 85, 1);
+            justify-content: flex-end;
+        }
+
+        #logoLeft {
+            height: 70px; 
+            margin-right: 500px;
+            margin-left: 30px;
+        }
+        #logoRight {
+            height: 100px;
+            margin-left: 350px;
+        }
+
+        #searchBar input[type="text"] {
+            
+            padding: 5px;
+            flex: 1;
+        }
+
+        /* Style main content area */
+        #studentDetails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        #studentDetails h2 {
+    width: 100%;
+    text-align: 1000px;
+    margin-bottom: 20px;
+}
+#studentDetailsText {
+    margin-left: 320px;
+}
+
+#logout {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: auto;
+            
+        }
+
+        #logout:hover {
+            background-color: #0056b3;
+        }
+
+        #intakeMainContainer {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .intakeContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .intakeBox {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: calc(50% - 20px); /* Two boxes in a row with some margin */
+        }
+
+        .intake {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intake h2 {
+            margin-bottom: 10px;
+        }
+
+        .intake img {
+            width: 80px; /* Decreased size */
+            height: auto;
+        }
+
+        #history {
+            width: 50%; /* Half the width of the page */
+            text-align: center; /* Align content to center */
+            color: #007bff;
+        }
+
+        /* Additional styling for the navbar */
+        .navbar {
+            padding: 10px; /* Adjust padding as needed */
+        }
+
+        .navbar form {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar input[type="search"] {
+            flex: 1;
+            margin-right: 10px; /* Adjust margin as needed */
+        }
+
+        /* Adjust styles for the logout button */
+        
+        /* Media query to adjust layout for smaller screens */
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            #logoLeft, #logoRight {
+                margin: 10px 0;
+            }
+            .navbar {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <title>UniManage Dashboard</title>
+</head>
+<body>
+    <div id="header">
+        <img src="images/Group 8.png" alt="Logo" id="logoLeft">
+        <div id="searchBar">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search student details" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div id="logout">
+            <a href="index.html"><button id="logout">Logout</button></a>
+        </div>
+        <img src="images/KDUlogoPNG.png" alt="KDU Logo" id="logoRight">
+    </div>
+    
+    <div id="studentDetails">
+        <div id="intakeMainContainer">
+            <h2><span id="studentDetailsText">Student Details</span></h2>
+            <div class="intakeContainer">
+                <div class="intakeBox">
+                    <!-- Intake 38 -->
+                    <div class="intake">
+                        <a href="intake 38.html" style="text-decoration: none; color: black;">
+                            <h2>Intake 38</h2>
+                            <img src="images/38.png" alt="Intake 38 Image">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="intakeBox">
+                    <!-- Intake 39 -->
+                    <div class="intake">
+                        <a href="intake 39.html" style="text-decoration: none; color: black;">
+                            <h2>Intake 39</h2>
+                            <img src="images/39.png" alt="Intake 39 Image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intakeContainer">
+                <div class="intakeBox">
+                    <!-- Intake 40 -->
+                    <div class="intake">
+                        <a href="intake 40.html" style="text-decoration: none; color: black;">
+                            <h2>Intake 40</h2>
+                            <img src="images/40.png" alt="Intake 40 Image">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="intakeBox">
+                    <!-- Intake 41 -->
+                    <div class="intake">
+                        <a href="intake 41.html" style="text-decoration: none; color: black;">
+                            <h2>Intake 41</h2>
+                            <img src="images/41.png" alt="Intake 41 Image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="history">
+            <!-- Add history content here -->
+            <div class="history-container">
+                <a href="history.html" style="text-decoration: none; color: black;">
+            <h1>History</h1>
+            <img src="images/Schedule.png" alt="History Schedule Image">
+        </div>
+    </div>
+
+    <!-- Add any JavaScript scripts here -->
+</body>
+</html>

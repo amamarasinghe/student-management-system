@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addnewstudent</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 50, 85, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 60px;
+        }
+
+        .navbar .left img{
+            height: 90px;
+            width: auto;
+        }
+        .navbar .right img {
+            height: 100px;
+            width: auto;
+            margin-right: 20px;
+        }
+
+        .navbar .center {
+            color: rgba(200, 228, 249, 1);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* Center the image */
+        .image-container {
+            text-align: center;
+            margin-top: 50px; /* Adjust as needed */
+        }
+
+        /* Adjust image size if necessary */
+        .image-container img {
+            max-width: 50%; /* Make sure the image doesn't exceed its container's width */
+            max-height: 90px;
+        }
+
+        /* Container for the form */
+        .form-container {
+            background-color: rgba(200, 228, 249, 1);
+            padding: 20px;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-top: 50px;
+            
+        }
+
+        /* Style for the questions and input bars */
+        .form-container input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border-radius: 20px;
+        
+        }
+
+        .form-container .question {
+            flex: 1;
+            padding: 8px;
+            background-color: rgba(0, 50, 85, 1);
+            color: white;
+            margin-top: 5px;
+            box-sizing: border-box;
+            margin-right: 10px;
+            max-width: 20%;
+            border-radius: 20px;
+            text-align: center;
+             /* Add margin between question and input */
+        }
+
+        /* Flexbox container for question and input */
+        .form-row {
+            display: flex;
+        }
+        /* Style for the radio button container */
+        .radio-container {
+            display: flex;
+            align-items: center;
+            margin-left: 400px;
+        }
+
+        /* Style for the radio button labels */
+        .radio-container label {
+            margin-right: 1px;
+            
+        }
+
+        /* Style for the radio buttons */
+        .radio-container input[type="radio"] {
+            margin-right: 100px;
+        }
+
+        /* Style for the buttons container */
+        .buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Adjusted to position the buttons at the bottom left */
+        }
+
+        /* Style for the next button */
+        .buttons-container .next-button {
+            cursor: pointer;
+            margin-left: 1300px; /* Added margin to separate the buttons */
+        }
+
+        /* Style for the back button */
+        .buttons-container .back-button {
+            cursor: pointer;
+            margin-right: 10px; /* Added margin to separate the buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="images/Group 8.png" alt="Logo">
+        </div>
+        <div class="center">
+            Student Details
+        </div>
+        <div class="right">
+            <img src="images/KDUlogoPNG.png" alt="KDU Logo">
+        </div>
+    </div>
+
+    <!-- Image container -->
+    <div class="image-container">
+        <!-- Input element for file upload -->
+        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+        <!-- Label for file upload -->
+        <label for="imageUpload">
+            <!-- Image for upload button -->
+            <img src="images/Group 47.png" alt="Image">
+        </label>
+    </div>
+
+    <!-- Container for the form -->
+    <div class="form-container">
+        <!-- zeroth row -->
+        <div class="form-row">
+            <div class="question">Index number</div>
+            <input type="text">
+        </div>
+        <!-- First row -->
+        <div class="form-row">
+            <div class="question">Full Name</div>
+            <input type="text">
+        </div>
+        <!-- Second row -->
+        <div class="form-row">
+            <div class="question">Name with Initials</div>
+            <input type="text">
+        </div>
+        <!-- Third row -->
+        <div class="form-row">
+            <div class="question">NIC Number</div>
+            <input type="text">
+        </div>
+        <!-- Fourth -->
+        <div class="form-row">
+            <div class="question">E-mail</div>
+            <input type="text">
+        </div>
+        <!-- Fifth row -->
+        <div class="form-row">
+            <div class="question">Birthday</div>
+            <input type="text">
+        </div>
+        <!-- sixth row -->
+        <div class="form-row">
+            <div class="question">Address</div>
+            <input type="text">
+        </div>
+        <!-- seventh row -->
+        <div class="form-row">
+            <div class="question">Contact Number</div>
+            <input type="text">
+        </div>
+        <!-- eighth row -->
+        <div class="form-row">
+            <div class="question">Gender</div>
+            <div class="radio-container">
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="gender" value="female">
+            </div>
+        </div>
+        <!-- Add more rows as needed -->
+    </div>
+
+    <!-- Buttons container -->
+    
+    <div class="buttons-container">
+        <img src="images/Group 30.png" alt="Back" class="back-button" onclick="location.href='intake 38.html';">
+        <img src="images/Group 28.png" alt="Next" class="next-button" onclick="location.href='addnewstudent2.html';">
+    </div>
+    <script>
+        // JavaScript to handle file selection
+        const imageUpload = document.getElementById('imageUpload');
+        imageUpload.addEventListener('change', function() {
+            // Selected file
+            const file = this.files[0];
+            
+            // If user cancels file selection, file will be null
+            if (file) {
+                // Handle the selected file here
+                console.log('Selected file:', file);
+            }
+        });
+    </script>
+</body>
+</html>

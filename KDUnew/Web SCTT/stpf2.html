@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 50, 85, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 80px; /* Set height to auto */
+        }
+
+        .navbar .left img{
+            height: auto; /* Adjusted to auto */
+            max-height: 100px; /* Added max-height */
+            max-width: 100%;
+        }
+        .navbar .right img {
+            height: auto; /* Adjusted to auto */
+            max-height: 130px; /* Added max-height */
+            max-width: 100%; /* Added max-width */
+        }
+
+        /* Added styles for containers */
+        .container {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Separate left and right sections */
+        .content {
+            display: flex;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Text color for Student Profile */
+        .center {
+            color: rgba(200, 228, 249, 1);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* Styling for rectangles */
+        .rectangles {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .rectangle {
+            width: 500px;
+            height: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(235, 239, 255, 1);
+            margin: 10px auto; /* Adjusted margin for vertical spacing */
+            border-radius: 20px;
+        }
+
+        /* Styling for the edit button */
+        .edit-button {
+            margin-top: 20px;
+            background-color: rgba(200, 200, 200, 1);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color : rgba(0, 150, 255, 1);
+            cursor: pointer;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            display: block; /* Ensures the button takes up the full width */
+            margin: 0 auto;
+        }
+
+        /* Style for the buttons container */
+        .buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Adjusted to position the buttons at the bottom left */
+        }
+
+        /* Style for the back button */
+        .buttons-container .back-button {
+            cursor: pointer;
+            margin-right: 10px; /* Added margin to separate the buttons */
+        }
+
+        /* Styling for semester containers */
+        .semester-container {
+            width: 200px; /* Adjusted width */
+            margin-bottom: 20px;
+        }
+
+        /* Adjusting semester 1 and 2 container sizes */
+        .semester-container:nth-child(-n+2) {
+            width: calc(30% - 20px);
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="left">
+        <img src="images/Group 8.png" alt="Logo">
+    </div>
+    <div class="center">
+        Student Profile
+    </div>
+    <div class="right">
+        <img src="images/KDUlogoPNG.png" alt="KDU Logo">
+    </div>
+</div>
+
+<!-- Content section -->
+<div class="content">
+    <div class="left-section">
+        <div class="container">
+            <img src="images/Group 47.png" alt="Profile Image" style="display: block; margin: 0 auto;">
+            <p style="color: black; font-weight: bold;text-align: center;">Index No: D/BSE/22/0029</p>
+            <div class="rectangles">
+                <div class="rectangle">Full Name: Marasinghe Mudiyanselage Ama Prabuddhika</div>
+                <div class="rectangle">Name with initials: MMA Prabuddhika</div>
+                <div class="rectangle">NIC Number: 200155100590</div>
+                <div class="rectangle">Email: ama@gmail.com</div>
+                <div class="rectangle">Birthday:2001.02.20</div>
+                <div class="rectangle">Contact Number: 0712345678</div>
+                <div class="rectangle">Gender:Female</div>
+            </div>
+            <button class="edit-button">Edit</button>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="container">
+            <!-- Content for right container -->
+            <img src="images\1.png" alt="Semester1" style="display: block; margin: 0 auto;">
+            <p style="color: black; font-weight: bold;text-align: center;">Semester One Modules</p>
+            <div class="rectangles">
+                <div class="rectangle">SE1011: Introduction to Software Engineering</div>
+                <div class="rectangle">SE1021: Object Oriented Programming</div>
+                <div class="rectangle">CS 1032: Discrete Structures</div>
+                <div class="rectangle">CS 1042: Database Management</div>
+                <div class="rectangle">SE1051: Web Development</div>
+                <div class="rectangle">CE1061: Computer Networks</div>
+                <div class="rectangle">SE1071: Operating Systems</div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="buttons-container">
+    <img src="images/Group 30.png" alt="Back" class="back-button" onclick="location.href='stpf1.html';">
+</div>
+</body>
+</html>

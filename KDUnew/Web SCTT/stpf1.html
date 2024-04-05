@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 50, 85, 1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 80px; /* Set height to auto */
+        }
+
+        .navbar .left img{
+            height: auto; /* Adjusted to auto */
+            max-height: 100px; /* Added max-height */
+            max-width: 100%;
+        }
+        .navbar .right img {
+            height: auto; /* Adjusted to auto */
+            max-height: 130px; /* Added max-height */
+            max-width: 100%; /* Added max-width */
+        }
+
+        /* Added styles for containers */
+        .container {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Flexbox for right side containers */
+        .right-containers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; 
+            border-radius: 20px;
+        }
+
+        /* Adjust container width for two containers per row */
+        .right-containers .container {
+            width: calc(50% - 20px); 
+            margin-bottom: 20px; 
+            border-radius: 20px;
+        }
+
+        /* Separate left and right sections */
+        .content {
+            display: flex;
+        }
+
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-section {
+            flex: 2;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Adjusted to column direction */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgba(0, 150, 255, 1);
+        }
+
+        /* Text color for Student Profile */
+        .center {
+            color: rgba(200, 228, 249, 1);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* Styling for rectangles */
+        .rectangles {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .rectangle {
+            width: 500px;
+            height: 20px;
+            padding: 10px; ;
+            text-align: center;
+            background-color: rgba(235, 239, 255, 1);
+            margin: 10px auto; /* Adjusted margin for vertical spacing */
+            border-radius: 20px;
+        }
+
+        /* Styling for the edit button */
+        .edit-button {
+            margin-top: 20px;
+            background-color: rgba(200, 200, 200, 1);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color : rgba(0, 150, 255, 1);
+            cursor: pointer;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            display: block; /* Ensures the button takes up the full width */
+            margin: 0 auto; 
+        }
+        /* Style for the buttons container */
+        .buttons-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Adjusted to position the buttons at the bottom left */
+        }
+
+       
+
+        /* Style for the back button */
+        .buttons-container .back-button {
+            cursor: pointer;
+            margin-right: 10px; /* Added margin to separate the buttons */
+        }
+        /* Styling for semester containers */
+        .semester-container {
+            width: 200px; /* Adjusted width */
+            margin-bottom: 20px;
+        }
+
+        /* Adjusting semester 1 and 2 container sizes */
+        .semester-container:nth-child(-n+2) {
+            width: calc(30% - 20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="images/Group 8.png" alt="Logo">
+        </div>
+        <div class="center">
+            Student Profile
+        </div>
+        <div class="right">
+            <img src="images/KDUlogoPNG.png" alt="KDU Logo">
+        </div>
+    </div>
+
+    <!-- Content section -->
+    <div class="content">
+        <div class="left-section">
+            <div class="container">
+                <img src="images/Group 47.png" alt="Profile Image" style="display: block; margin: 0 auto;">
+                <p style="color: black; font-weight: bold;text-align: center;">Index No: D/BSE/22/0029</p>
+                <div class="rectangles">
+                    <div class="rectangle">Full Name: Marasinghe Mudiyanselage Ama Prabuddhika</div>
+                    <div class="rectangle">Name with initials: MMA Prabuddhika</div>
+                    <div class="rectangle">NIC Number: 200155100590</div>
+                    <div class="rectangle">Email: ama@gmail.com</div>
+                    <div class="rectangle">Birthday:2001.02.20</div>
+                    <div class="rectangle">Contact Number: 0712345678</div>
+                    <div class="rectangle">Gender:Female</div>
+                </div>
+                <button class="edit-button">Edit</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="right-containers">
+                <div class="container semester-container">
+                    <a href="stpf2.html" class="semester-link">
+                        <img src="images/1.png" alt="Semester 1" class="semester-img">
+                        Semester 1
+                    </a>
+                </div>
+                <div class="container semester-container">
+                    <img src="images/2.png" alt="Semester 2">
+                    Semester 2
+                </div>
+            </div>
+            <div class="right-containers">
+                <div class="container semester-container">
+                    <img src="images/3.png" alt="Semester 3">
+                    Semester 3
+                </div>
+                <div class="container semester-container">
+                    <img src="images/4.png" alt="Semester 4">
+                    Semester 4
+                </div>
+            </div>
+            <div class="right-containers">
+                <div class="container semester-container">
+                    <img src="images/5.png" alt="Semester 5">
+                    Semester 5
+                </div>
+                <div class="container semester-container">
+                    <img src="images/6.png" alt="Semester 6">
+                    Semester 6
+                </div>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <img src="images/Group 30.png" alt="Back" class="back-button" onclick="location.href='intake 39.html';">
+            
+        </div>
+    </div>
+</body>
+</html>
